@@ -36,7 +36,6 @@ const webSearchTool = new MyTool({
         `https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json`
       );
       
-      // Log the raw response (for debugging)
       const rawData = await response.text();
       console.log("Raw response from search API:", rawData);
 
@@ -101,7 +100,7 @@ if (typeof llm.bindTools !== "function") {
   };
 }
 
-// Bind the tools to the LLM.
+// Bind the tools to the LLM beacuse ollama by default doesn't bind the tools 
 llm.bindTools(tools);
 
 // -----------------------------------------------------------------------------
